@@ -2,9 +2,6 @@ const root = 'https://jsonplaceholder.typicode.com';
 
 $(document).ready(function(){
   initializeTables();
-  $(".album-id").click(function(target) {
-    console.log(target);
-  });
 });
 
 function fetchUser(userId) {
@@ -38,15 +35,23 @@ function setUserAlbums(userId) {
   fetchUserAlbums(userId).then(function(albums) {
     albums.forEach((album) => {
       $(`#albums-${userId}`).append(
-        $("<li draggable='true'>").append(`<div class="album-id">${album.id}</div>`, `<div class="album-title">${album.title}</div>`).on({
-          mousedown: function(target) {
-            console.log(target);
-          },
-          mouseup: function(target) {
-            console.log(target);
-          }
-        })
+        $(`<li id='${album.id}' draggable='true'> ondragstart=${drag.bind(this)}`).append(`<div class="album-id">${album.id}</div>`, `<div class="album-title">${album.title}</div>`).on("mousedown", (e) => drag(e))
       );
     });
   });
+}
+
+function dragging(e) {
+  e.preventDefault();
+}
+
+function drag(e) {
+  // e.dataTransfer.ef
+  e.dataTransfer.setData("text", e.target.id);
+}
+
+function drop(e) {
+  e.preventDefault();
+  const album = e.dataTransfer.getData("text");
+  e.target.appendChild(document.getElementById(album));
 }
