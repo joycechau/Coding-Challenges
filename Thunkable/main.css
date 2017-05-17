@@ -1,3 +1,107 @@
-.test {
-  background-color: red;
+* {
+  font-family: "Open Sans";
+  box-sizing: border-box;
+  font-size: 20px;
+  text-align: center;
+}
+
+.main {
+  width: 1477px;
+  height: 983px;
+  border: 1px solid #d8d8d8;
+  margin: 0 auto;
+  background-image: linear-gradient(to left, #fcf5f5, #f0f2ff);
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  background-image: linear-gradient(to left, #ffffff, #f2f3f5);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.beaver-logo {
+  width: 70px;
+  height: 100%;
+}
+
+.settings {
+  height: 34.8px;
+  width: 34.8px;
+  margin: 19.3px 31.1px;
+}
+
+.body {
+  padding: 0px 192px 0px 115px;
+}
+
+.search-and-sort {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search-and-sort div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #7d7d7d;
+}
+
+.search-and-sort div span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  background-color: #fefefe;
+  box-shadow: 0 2px 3px 0 #0000000c;
+  width: 132px;
+  height: 40px;
+  margin-left: 15px;
+}
+
+.search-and-sort div span pre {
+  color: #6a6a6a;
+}
+
+.app-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app {
+  border-radius: 2px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 3px 0 #0000000c;
+  width: 270px;
+  height: 250px;
+  padding: 27px 0px 14px 0px;
+}
+
+.app > img {
+  height: 85.1px;
+  width: 85.1px;
+  margin-bottom: 25px;
+}
+
+.app div {
+  color: #5d5d5d;
+}
+
+.app .last-edit {
+  margin: 6px 0px 10px 0px;
+  font-size: 14px;
+  color: #c6c6c6;
+}
+
+.create-app {
+  padding: 66px 0px 52px 0px;
+}
+
+.create-app > img {
+  margin-bottom: 39px;
+  height: 66px;
+  width: 66px;
 }
