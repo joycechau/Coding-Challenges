@@ -34,11 +34,10 @@ function makeChange(amount, coins) {
   return numberOfWays;
 }
 
-
-console.log("Test 1: " + makeChange(4, [4])); // 1
-console.log("Test 2: " + makeChange(4, [2])); // 1
-console.log("Test 3: " + makeChange(8, [2, 4])); // 2
-console.log("Test 4: " + makeChange(8, [2, 3])); // 1
-console.log("Test 5: " + makeChange(4, [1,2,3])); // 4
-console.log("Test 6: " + makeChange(4, [])); // 0
-console.log("Test 7: " + makeChange(4, [5,6,7])); // 0
+console.log("Test 1: " + changePossibilitiesBottomUp(4, [4])); // 1
+console.log("Test 2: " + changePossibilitiesBottomUp(4, [2])); // 1
+console.log("Test 3: " + changePossibilitiesBottomUp(8, [2, 4])); // 2
+console.log("Test 4: " + changePossibilitiesBottomUp(8, [2, 3])); // 1
+console.log("Test 5: " + changePossibilitiesBottomUp(4, [1,2,3])); // 4
+console.log("Test 6: " + changePossibilitiesBottomUp(4, [])); // 0
+console.log("Test 7: " + changePossibilitiesBottomUp(4, [5,6,7])); // 0
