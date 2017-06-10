@@ -1,14 +1,7 @@
-// If no coins is less than amount, return 0;
-// Case 1 coin => Is it evenly divisible by amount? If so, return 1.
-// Case 2 coins => Are any less than amount? If so, is it divisible?  If not, can you add it with the other coin?
-// Case 3 coins => For each coin.  Check if it's evenly divisible.  Then subtract that coin from amount.  Now you have new amount with 2 other coins.
-
 function makeChange(amount, coins) {
   if (coins.every(coin => coin > amount) || coins.length === 0) {
     return 0;
   }
-
-
 
   let numberOfWays = 0;
 
