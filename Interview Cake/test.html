@@ -29,7 +29,57 @@
 
     }*/
 
+    #slides {
+        position: relative;
+        height: 300px;
+        padding: 0px;
+        margin: 0px;
+        list-style-type: none;
+    }
 
+    .slide {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 1;
+
+        -webkit-transition: opacity 1s;
+        -moz-transition: opacity 1s;
+        -o-transition: opacity 1s;
+        transition: opacity 1s;
+    }
+
+    .showing {
+        opacity: 1;
+        z-index: 2;
+    }
+
+    .slide {
+    font-size: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #333;
+    color: #fff;
+}
+
+.slide:nth-of-type(1) {
+    background: red;
+}
+.slide:nth-of-type(2) {
+    background: orange;
+}
+.slide:nth-of-type(3) {
+    background: green;
+}
+.slide:nth-of-type(4) {
+    background: blue;
+}
+.slide:nth-of-type(5) {
+    background: purple;
+}
 
     </style>
   </head>
@@ -44,9 +94,36 @@
         Place trimmed Brussels sprouts, olive oil, kosher salt, and pepper in a large resealable plastic bag. Seal tightly, and shake to coat. Pour onto a baking sheet, and place on center oven rack.
         Roast in the preheated oven for 30 to 45 minutes, shaking pan every 5 to 7 minutes for even browning. Reduce heat when necessary to prevent burning. Brussels sprouts should be darkest brown, almost black, when done. Adjust seasoning with kosher salt, if necessary. Serve immediately.</p>
     </div>
+    <ul id="puppies" onclick="test()">
+      <li>Corgi</li>
+      <li>Husky</li>
+      <li>Woof</li>
+    </ul>
 
-
-
+    <ul id="slides">
+        <li class="slide showing">Slide 1</li>
+        <li class="slide">Slide 2</li>
+        <li class="slide">Slide 3</li>
+        <li class="slide">Slide 4</li>
+        <li class="slide">Slide 5</li>
+    </ul>
   </body>
+  <script type="text/javascript">
 
+    function test() {
+      alert(this)
+    }
+
+  </script>
+  <script type="text/javascript">
+  var slides = document.querySelectorAll('#slides .slide');
+var currentSlide = 0;
+var slideInterval = setInterval(nextSlide,2000);
+
+function nextSlide() {
+  slides[currentSlide].className = 'slide';
+  currentSlide = (currentSlide+1)%slides.length;
+  slides[currentSlide].className = 'slide showing';
+}
+  </script>
 </html>
