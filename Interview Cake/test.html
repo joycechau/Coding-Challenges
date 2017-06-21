@@ -43,18 +43,50 @@
         Place trimmed Brussels sprouts, olive oil, kosher salt, and pepper in a large resealable plastic bag. Seal tightly, and shake to coat. Pour onto a baking sheet, and place on center oven rack.
         Roast in the preheated oven for 30 to 45 minutes, shaking pan every 5 to 7 minutes for even browning. Reduce heat when necessary to prevent burning. Brussels sprouts should be darkest brown, almost black, when done. Adjust seasoning with kosher salt, if necessary. Serve immediately.</p>
     </div>
-    <ul id="puppies" onclick="test()">
-      <li>Corgi</li>
+    <ul id="puppies" onclick="alert('ul')">
+      <li onclick="alert('li')">Corgi</li>
       <li>Husky</li>
       <li>Woof</li>
     </ul>
+    <button id="btn-0">Button 1!</button>
+<button id="btn-1">Button 2!</button>
+<button id="btn-2">Button 3!</button>
+<input id="id1" type="number" min="100" max="300" required>
+<button disabled onclick="myFunction()">OK</button>
+<script type="text/javascript">
+    var prizes = ['A Unicorn!', 'A Hug!', 'Fresh Laundry!'];
+    for (var btnNum = 0; btnNum < prizes.length; btnNum++) {
+        // for each of our buttons, when the user clicks it...
+        document.getElementById('btn-' + btnNum).onclick = function(frozenBtnNum){
+            return function() {
+                // tell her what she's won!
+                alert(prizes[frozenBtnNum]);
+            };
+        }(btnNum); // LOOK! We're passing btnNum to our anonymous function here!
+    }
+</script>
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "./corgi.txt", true);
+  xhttp.send();
+}
+</script>
 
   </body>
   <script src="test.js" type="text/javascript">
 
-    function test() {
-      document.write("weee")
-    }
+
 
   </script>
 
