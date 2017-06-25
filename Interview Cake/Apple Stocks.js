@@ -1,3 +1,5 @@
+// Brute force - Try every pair and use 2 nested loops => O(n^2)
+
 // Solution
 // We’ll greedily ↴ walk through the array to track the max profit and lowest price so far.
 //

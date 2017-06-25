@@ -1,3 +1,9 @@
+// Brute force - A brute force approach would use two loops to multiply the integer at every index by the integer at every nestedIndex, unless index === nestedIndex.
+//
+// This would give us a runtime of O(n^2)O(n
+// ​2
+// ​​ ). Can we do better?
+
 // Solution
 // To find the products of all the integers except the integer at each index, we'll go through our array greedily ↴ twice. First we get the products of all the integers before each index, and then we go backwards to get the products of all the integers after each index.
 //
